@@ -1,0 +1,98 @@
+
+// vue transition动画
+.fade-enter-active, .fade-leave-active {
+  position: fixed;
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}
+// 左边划入
+.slide-left-enter-active{
+  position: relative;
+}
+.slide-left-leave-active{
+  position: fixed;
+}
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all 0.3s;
+  left: 0;
+  right: 0;
+}
+.slide-left-enter {
+  transform: translateX(-100%);
+}
+.slide-left-enter-to {
+  transform: translateX(0%);
+}
+.slide-left-leave {
+  transform: translateX(0%);
+}
+.slide-left-leave-to {
+  transform: translateX(100%);
+}
+// 右边划入
+.slide-right-enter-active{
+  position: relative;
+}
+.slide-right-leave-active{
+  position: fixed;
+}
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: all 0.3s;
+  left: 0;
+  right: 0;
+}
+.slide-right-enter {
+  transform: translateX(100%);
+}
+.slide-right-enter-to {
+  transform: translateX(0%);
+}
+.slide-right-leave {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+// 遮罩
+.seeyou-shade {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 998;
+}
+.seeyou-shade-content {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+// 1像素边框
+.hairline-bottom {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    transform-origin: center;
+    box-sizing: border-box;
+    pointer-events: none;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    border-bottom: 1px solid #efefef;
+    transform: scale(0.5);
+  }
+}
