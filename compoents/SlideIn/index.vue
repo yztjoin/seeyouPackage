@@ -33,6 +33,7 @@ export default {
   },
   methods: {
     isShowFn() {
+      this.$emit("shadeClick")
       this.$emit("update:isShow", !this.isShow)
     },
   },
